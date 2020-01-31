@@ -52,7 +52,8 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'annotate'
-  gem 'pry-rails' 
+  gem 'pry-rails'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master' 
 end
 
 group :test do

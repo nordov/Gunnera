@@ -1,0 +1,12 @@
+json.extract! user, 
+    :id, 
+    :email,
+    :fname,
+    :lname,
+    :phone_number,
+    :work_number,
+    :photo_url,
+    :about,
+    :address,
+    :city,
+    :state
