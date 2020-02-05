@@ -1,0 +1,106 @@
+.modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+  
+.modal-child {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .session-form-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 580px;
+        background-color: white;
+        border-radius: 12px;
+        padding: 20px;
+        font-size: 16px;
+    
+        .session-form-header{
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            font-weight: 800;
+            // background-color: burlywood;
+            position: relative;
+        
+            .close-x{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                font-size: 18px;
+                line-height: 24px;
+                width: 14px;        
+            }        
+        }
+
+        input{
+            padding:15px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input[type=text]{
+            width: 100%;
+            border: 1px solid lightslategray;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        input[type=password]{
+            width: 100%;
+            border: 1px solid lightslategray;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            border-top: none;     
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus{
+            border: 2px solid black;
+            outline: none;
+        }
+
+        button{
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;;
+            font-size: 16px;
+            font-weight: 800;
+            color: white;
+            text-align: center;
+            border-radius: 12px;
+            background-size: 200% 200%;
+            background-image: radial-gradient(circle at center center, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%);
+        }
+
+        .session-form-footer {
+            
+            margin-top: 15px;
+        
+            a {
+                font-weight: 800;
+            }
+        }
+
+        ul, p {
+            margin-left: 20px;
+        }
+
+        li{
+            list-style: disc;
+            margin-bottom: 15px;;
+        }
+
+    }
+}
+

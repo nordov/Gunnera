@@ -14,5 +14,3 @@ const receiveCurrentUser = currentUser => ({
 
 export const signup = user => dispatch => postUser(user)
     .then(user => dispatch(receiveCurrentUser(user)), error => { dispatch(receiveErrors(error)) });
-
-

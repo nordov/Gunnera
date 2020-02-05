@@ -7,6 +7,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    
+    <% if (current_user) %>
+    <script type="text/javascript">
+      window.currentUser = {};
+      window.currentUser.id = '<%= current_user.id %>';
+      window.currentUser.email = '<%= current_user.email %>';
+      window.currentUser.fname = '<%= current_user.fname %>';
+      window.currentUser.lname = '<%= current_user.lname %>';
+      window.currentUser.phone_number = '<%= current_user.phone_number %>';
+      window.currentUser.work_number = '<%= current_user.work_number %>';
+      window.currentUser.photo_url = '<%= current_user.photo_url %>';
+      window.currentUser.about = '<%= current_user.about %>';
+      window.currentUser.address = '<%= current_user.address %>';
+      window.currentUser.city = '<%= current_user.city %>';
+      window.currentUser.state = '<%= current_user.state %>';
+      window.currentUser.created_at = '<%= current_user.created_at %>';
+    </script>
+    <% end %>
+    
+    <script type="text/javascript">
+      window.homeSplash = "<%= image_url('home_bg.jpg') %>";
+    </script>
   </head>
 
   <body>

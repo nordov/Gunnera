@@ -1,26 +1,33 @@
 import React from "react";
-import RootNavBarContainer from "./nav_bar/root_nav_bar/root_nav_container";
-import LoginFormContainer from "./auth/login_form_container";
-import SignupFormContainer from "./auth/signup_form_container";
+import HeaderContainer from "./layout/header_container"
+import MainContainer from "./layout/main_container"
+import Modal from './ui/modal'
 import {Route} from "react-router-dom";
 
-
-const App = () => (
-    <div>
-        <header>
-
-                <div className="logo">
-                </div>
-                <div className="nav_bar">
-                    <RootNavBarContainer />
-                </div>
-
-        </header>
-        <Route path="/login" component={LoginFormContainer}/>
-        <Route path="/signup" component={SignupFormContainer}/>
-    </div>
+const image = img => (
+    <img src={window.brentURL} />
 );
+
+class App extends React.Component {
+
+    
+    render() {
+        return (
+            <div className="main-application">
+                <HeaderContainer />
+                <MainContainer />
+                <Modal />
+            </div>
+
+            
+        );
+    };
+};
 
 export default App;
 
 //wrapper that wraps all other containers
+
+/* 
+<Route path="/login" component={LoginFormContainer}/>
+<Route path="/signup" component={SignupFormContainer}/> */
