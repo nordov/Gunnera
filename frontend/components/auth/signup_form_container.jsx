@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const mapStateToProps = (state) => ({
     formType: "Sign up",
-    errors: state.errors.session,
+    errors: state.errors.session.responseJSON
 })
 
 const mapDispatchToProps = (dispatch) => ({
