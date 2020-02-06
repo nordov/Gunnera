@@ -11,7 +11,10 @@
 | work_number      | string     | indexed                   |
 | photo_url        | string     |                           |
 | about            | text       |                           |
-| location         | string     | indexed                          |
+| address          | string     | indexed                   |
+| city             | string     | indexed                   |
+| state            | string     | indexed                   |
+| zip              | string     | indexed                   |
 | spoken_languages | string     | array                     |
 | created_at       | datetime   | not null                  |
 | updated_at       | datetime   | not null                  |
@@ -30,20 +33,33 @@
 | :----------------|:-----------| :-------------------------------------|
 | id               | integer    | not null, primary key                 |
 | host             | integer    | not null, indexed, foreign id         |
+| complete_listing | boolean    | not null, indexed                     |
 | title            | string     | not null, indexed                     |
 | description      | text       | not null, indexed                     |
-| guest_capacity   | integer    | not null                              |
-| bedroom_num      | integer    | not null                              |
-| beds_num         | integer    | not null                              |
-| bathroom_num     | integer    | not null                              |
-| property_type    | string     | not null                              |
-| self_checking    | boolean    | not null                              |
-| price_per_night  | float      | not null                              |
-| amenities        | string     | not null, array                       |
+| address          | string     | not null, indexed                     |
+| city             | string     | not null, indexed                     |
+| state            | string     | not null, indexed                     |
+| zip              | string     | not null, indexed                     |
+| guest_capacity   | integer    | not null, indexed                     |
+| bedroom_num      | integer    | not null, indexed                     |
+| bathroom_num     | integer    | not null, indexed                     |
+| property_type    | string     | not null, indexed                     |
+| property_subtype | string     | not null, indexed                     |
+| property_access  | string     | not null, indexed                     |
+| guest_dedicated  | string     | not null, indexed                     |
+| price            | decimal    | not null, indexed                     |
 | created_at       | datetime   | not null                              |
 | updated_at       | datetime   | not null                              |
 
 * host references to users
+
+# sleeping_arragenments
+
+# amenities
+
+# house_rules
+
+# other details
 
 # bookings
 | Column                  | Data Type  | Details                         |
