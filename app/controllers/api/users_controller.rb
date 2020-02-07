@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
           login_user!(@user)
           render :show
       else
-          render :json => @user.errors.full_messages.to_json
+          render :json => @user.errors.full_messages.to_json, status:422
       end
     end
   

@@ -37,7 +37,7 @@ User.create(
     state: 'CA',
     photo_url: '',
     about: 'Iron Man is a fictional superhero appearing in American comic books published by Marvel Comics. The character was co-created by writer and editor Stan Lee, developed by scripter Larry Lieber, and designed by artists Don Heck and Jack Kirby.',
-    password_digest: '$2a$12$k/MDTTnttj5K.xXzDIHR4uCwo9fldxEjqFcb7ZrzmMG8TMJYfVEvy',
+    password: '123456',
     session_token: Faker::Lorem.characters(number: 10)    
 )
 
@@ -52,7 +52,7 @@ User.create(
     state: 'NY',
     photo_url: '',
     about: 'Captain America is a fictional superhero appearing in American comic books published by Marvel Comics. Created by cartoonists Joe Simon and Jack Kirby, the character first appeared in Captain America Comics #1 from Timely Comics, a predecessor of Marvel Comics.',
-    password_digest: '$2a$12$k/MDTTnttj5K.xXzDIHR4uCwo9fldxEjqFcb7ZrzmMG8TMJYfVEvy',
+    password: '123456',
     session_token: Faker::Lorem.characters(number: 10)    
 )
 
@@ -67,6 +67,27 @@ User.create(
     state: 'NY',
     photo_url: '',
     about: 'The Hulk is a fictional superhero appearing in publications by the American publisher Marvel Comics. Created by writer Stan Lee and artist Jack Kirby, the character first appeared in the debut issue of The Incredible Hulk.',
-    password_digest: '$2a$12$k/MDTTnttj5K.xXzDIHR4uCwo9fldxEjqFcb7ZrzmMG8TMJYfVEvy',
-    session_token: Faker::Lorem.characters(number: 10)    
+    password: '123456',
+    session_token: Faker::Lorem.characters(number: 10)  
 )
+
+6.times do
+    Listing.create(
+        host_id: 1,
+        complete_listing: true,
+        title: 'Private Pool House with Amazing Views!',
+        description: 'Private location with breathtaking views and access to pool and spa with free gated parking! Centrally located in LA, close to Downtown LA, Hollywood and our neighboring cities of Glendale and Pasadena.',
+        address: '4127 Barryknoll Dr',
+        city: 'Los Angeles',
+        state: 'CA',
+        zip: '90065',
+        guest_capacity: 3,
+        bedroom_num: 1,
+        bathroom: 1,
+        property_type: 'Secondary unit',
+        property_subtype: 'Guesthouse',
+        property_access: 'Entire place',
+        guest_dedicated: 'Yes',
+        price: 175
+    )
+end

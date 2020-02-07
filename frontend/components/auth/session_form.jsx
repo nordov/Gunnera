@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
                 <div className="session-form-header">
                     <h2>{this.props.formType}</h2>
                     <div className="close-x">
-                        <Link onClick={this.props.closeModal}>X</Link>
+                        <span onClick={this.props.closeModal}>X</span>
                     </div>                     
                 </div>
                 <div className='session-form-main'>

@@ -4,7 +4,7 @@ $main_font: 'Montserrat', sans-serif;
 
 body {
     font-family: $main_font;
-    font-size: 14px;
+    font-size: 16px;
     color: black;
     box-sizing: border-box;
 }
@@ -47,6 +47,10 @@ header > div {
     .nav_bar{
         height: 70px;
         //background-color: salmon;
+
+        .dropdown-btn{
+            cursor: pointer;
+        }       
     
         ul {
             display: flex;
@@ -56,6 +60,7 @@ header > div {
                 height: 70px;
                 padding: 0 20px;
                 line-height: 70px;
+                cursor: pointer;
                 //background-color: seagreen;
             }
 
@@ -63,6 +68,28 @@ header > div {
                 border-bottom: solid white 2px;
             }
         }//ul
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+          }
+          
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+          }
+          
+          .dropdown:hover .dropdown-content {
+            display: block;
+          }
+
     } //.nav_bar         
 }//header > div
 
@@ -91,6 +118,43 @@ main{
 
     .content {
         height: 200px;
+        width: 80%;
+        max-width: 1600px;
+        margin: 20px auto;
+
+        .grid{
+            display: flex;
+            flex-flow: row wrap;
+            //background-color: chocolate;
+
+            .grid-item{
+                width: 23.875%;
+                margin-right: 1.5%;
+                border-radius: 12px;
+                line-height: 20px;
+                //background-color: burlywood;
+
+                img{
+                    width: 100%;
+                    border-top-left-radius: 12px;
+                    border-top-right-radius: 12px;
+                    
+                }
+
+                .price{
+                    font-weight: 800;
+                }
+            }
+
+            .grid-item:nth-child(4n){
+                margin: 0;
+            }
+
+            .grid-item:nth-child(n+5){
+                margin-top: 20px;
+            }            
+            
+        }
     }
 }
 

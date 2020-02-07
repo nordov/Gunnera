@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { signup } from '../../actions/user_actions';
-import { openModal } from "../../actions/modal_actions";
+import { openModal, closeModal } from "../../actions/modal_actions";
 import SessionForm from './session_form';
 import { Link } from 'react-router-dom';
 
 const mapStateToProps = (state) => ({
     formType: "Sign up",
-    errors: state.errors.session.responseJSON
+    errors: state.entities.users.responseJSON
 })
 
 const mapDispatchToProps = (dispatch) => ({
     processForm: user => dispatch(signup(user)),
     otherForm: (
-        <Link onClick={() => dispatch(openModal('login'))}>
+        <Link to="/" onClick={() => dispatch(openModal('login'))}>
             Log in
         </Link>
     ),

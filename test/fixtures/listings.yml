@@ -11,7 +11,7 @@
 #  description      :text
 #  guest_capacity   :integer
 #  guest_dedicated  :string
-#  price            :decimal(6, 2)
+#  price            :integer
 #  property_access  :string
 #  property_subtype :string
 #  property_type    :string

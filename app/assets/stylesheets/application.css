@@ -12,6 +12,7 @@
  *
  *= require reset
  *= require_fonts
+ *= require font-awesome
  *= require_tree .
  *= require_self
  *= require_gunnera

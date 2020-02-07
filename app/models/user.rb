@@ -40,6 +40,10 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    has_many :listings,
+        class_name: :Listing,
+        foreign_key: :host_id
+
     def self.find_by_credentials(email, password)
         user = self.find_by(email: email)
 

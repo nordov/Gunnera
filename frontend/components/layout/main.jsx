@@ -1,10 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ListingGrid from '../listings/listing_grid_container'
 
 
 
 const Main = ({ currentUser }) => {
 
+    const homeSplash = () => {
+        if (currentUser == null)
+            return(
+                <section>
+                    <div className="splash">
+                        <img src={window.homeSplash} />
+                    </div>                    
+                </section>
+            )
+    };
+    
     const unsignedUserMain = () => (
         <main>
             <section>
@@ -26,7 +38,14 @@ const Main = ({ currentUser }) => {
         </main>
     );
 
-    return currentUser ? (signedUserMain()) : (unsignedUserMain());
+    return (
+        <main>
+            { homeSplash() }
+            <div className="content">
+                <ListingGrid />
+            </div>
+        </main>        
+    );
 }
 
 export default Main;

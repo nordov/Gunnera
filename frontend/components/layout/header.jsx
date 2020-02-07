@@ -5,10 +5,6 @@ import { Link } from 'react-router-dom';
 
 const Header = ({ currentUser, logout, openModal }) => {
 
-    const navBar = (currentUser) => {
-        return currentUser ? (<LoggedIn />) : (<LoggedOut />);
-    }
-
     const unsignedUserHeader = () =>(
         <header>          
             <div className="wrap">                 
@@ -16,14 +12,11 @@ const Header = ({ currentUser, logout, openModal }) => {
                 </div>
                 <div className="nav_bar">
                     <ul>
-                        <li>
-                            <Link to="#">Help</Link>
+                        <li onClick={() => openModal('signup')}>
+                            Sign up
                         </li>
-                        <li>
-                            <Link onClick={() => openModal('signup')}>Sign up</Link>
-                        </li>
-                        <li>
-                            <Link onClick={() => openModal('login')}>Log in</Link>
+                        <li onClick={() => openModal('login')}>
+                            Log in
                         </li>
                     </ul> 
                 </div>
@@ -43,14 +36,16 @@ const Header = ({ currentUser, logout, openModal }) => {
                 </div>
                 <div className="nav_bar">
                     <ul>
-                        <li><Link to="#">Add listing</Link></li>
-                        <li><Link to="#">Host</Link></li>
-                        <li><Link to="/signup">Saved</Link></li>
-                        <li><Link to="/login">Trips</Link></li>
-                        <li><Link to="/login">Messages</Link></li>
-                        <li><Link to="/login">Help</Link></li>
-                        <li><Link to="/login">Picture menu</Link></li>
-                        <li><Link onClick={logout}>Log Out</Link></li>
+                        <li>My Reservations</li>
+                        <li>My Listings</li>
+                        <li>
+                            <div className="dropdown">
+                                Profile
+                                <div className="dropdown-content" onClick={logout}>
+                                    Log Out
+                                </div>                            
+                            </div>
+			            </li>                        
                     </ul>                     
                 </div>
             </div>

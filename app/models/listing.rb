@@ -11,7 +11,7 @@
 #  description      :text
 #  guest_capacity   :integer
 #  guest_dedicated  :string
-#  price            :decimal(6, 2)
+#  price            :integer
 #  property_access  :string
 #  property_subtype :string
 #  property_type    :string
@@ -42,4 +42,11 @@
 #
 
 class Listing < ApplicationRecord
+
+    validates :host_id, :title, presence: true
+
+    belongs_to :host,
+        class_name: :User,
+        foreign_key: :host_id
+
 end
