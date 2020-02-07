@@ -26,6 +26,9 @@
 #     )
 # end
 
+User.destroy_all
+Listing.destroy_all
+
 User.create(
     fname: 'Tony',
     lname: 'Stark',
